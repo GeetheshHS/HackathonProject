@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useTheme } from '@/app/layout';
+import { useTheme } from '@/components/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 
