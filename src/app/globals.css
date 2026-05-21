@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Aurora Obsidian Dark Theme */
+  --bg-primary: #030712;
+  --bg-secondary: #080e1c;
+  --bg-tertiary: #0c1529;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  
+  /* Glowing Ethereal Accents */
+  --accent-cyan: #06b6d4;      /* Holographic Cyan */
+  --accent-purple: #6366f1;    /* Deep Electric Indigo */
+  --accent-pink: #d946ef;      /* Restorative Lavender Pink */
+  --accent-emerald: #10b981;   /* Biophilic Green */
+  
+  /* True Luxury Glass */
+  --border-glass: rgba(255, 255, 255, 0.05);
+  --bg-glass: rgba(8, 14, 28, 0.65);
+  --bg-glass-hover: rgba(12, 22, 44, 0.8);
+  --inner-glow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.06);
+  --glow-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 50px rgba(6, 182, 212, 0.02);
+}
+
+.light {
+  /* Elegant Porcelain Lavender Light Theme */
+  --bg-primary: #f3f5fa;      
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8fafc;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  
+  /* Refined Soft Accents */
+  --accent-cyan: #0891b2;      
+  --accent-purple: #4f46e5;    
+  --accent-pink: #db2777;      
+  --accent-emerald: #059669;
+
+  /* Luminous White Glass */
+  --border-glass: rgba(15, 23, 42, 0.04);
+  --bg-glass: rgba(255, 255, 255, 0.75);
+  --bg-glass-hover: rgba(255, 255, 255, 0.9);
+  --inner-glow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.9);
+  --glow-shadow: 0 15px 35px rgba(99, 102, 241, 0.03), 0 1px 3px rgba(0, 0, 0, 0.01);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Holographic Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent-cyan), var(--accent-purple));
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--accent-purple), var(--accent-pink));
+}
+
+/* Centered Radial Masked Cyber Grid */
+.bg-grid-cyber {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.02) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+}
+
+.light .bg-grid-cyber {
+  background-image: 
+    linear-gradient(to right, rgba(79, 70, 229, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 70, 229, 0.02) 1px, transparent 1px);
+}
+
+/* Double-Layer Premium Glassmorphism */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--inner-glow), var(--glow-shadow);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: var(--bg-glass-hover);
+  border-color: rgba(6, 182, 212, 0.15);
+  box-shadow: 
+    var(--inner-glow), 
+    0 25px 50px rgba(0, 0, 0, 0.25), 
+    0 0 40px rgba(6, 182, 212, 0.08), 
+    0 0 80px rgba(99, 102, 241, 0.04);
+}
+
+.light .glass-card:hover {
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 
+    var(--inner-glow), 
+    0 20px 40px rgba(99, 102, 241, 0.06), 
+    0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+/* Sleek Sidebar / Dynamic Nav Backplate */
+.glass-panel {
+  background: rgba(4, 7, 18, 0.7);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border-right: 1px solid var(--border-glass);
+}
+
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border-right: 1px solid var(--border-glass);
+}
+
+/* Premium Dynamic Inputs */
+.glass-input {
+  background: rgba(3, 7, 18, 0.4);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.light .glass-input {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: inset 0 1px 2px rgba(99, 102, 241, 0.02);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  background: rgba(3, 7, 18, 0.6);
+  box-shadow: 
+    inset 0 1px 2px rgba(0, 0, 0, 0.2), 
+    0 0 20px rgba(6, 182, 212, 0.15);
+}
+
+.light .glass-input:focus {
+  border-color: var(--accent-purple);
+  background: #ffffff;
+  box-shadow: 
+    inset 0 1px 2px rgba(0,0,0,0.02),
+    0 0 20px rgba(99, 102, 241, 0.1);
+}
+
+/* Text Gradient Highlights */
+.text-gradient-cyan-purple {
+  background: linear-gradient(135deg, #22d3ee 0%, #6366f1 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light .text-gradient-cyan-purple {
+  background: linear-gradient(135deg, #0891b2 0%, #4f46e5 50%, #db2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Breathing Mesh Drift Keyframes */
+@keyframes ambient-drift {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  33% {
+    transform: translate(50px, -80px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-30px, 40px) rotate(240deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(360deg);
+  }
+}
+
+@keyframes scale-pulsate {
+  0%, 100% {
+    transform: scale(1) opacity(0.3);
+  }
+  50% {
+    transform: scale(1.2) opacity(0.5);
+  }
+}
+
+.bg-blob {
+  filter: blur(100px);
+  animation: ambient-drift 20s infinite ease-in-out alternate;
+  mix-blend-mode: screen;
+  opacity: 0.35;
+}
+
+.light .bg-blob {
+  mix-blend-mode: multiply;
+  opacity: 0.12;
+  filter: blur(120px);
+  animation: ambient-drift 25s infinite ease-in-out alternate;
+}
+
+/* Pulsing Biometrics indicator */
+.pulse-indicator {
+  position: relative;
+}
+
+.pulse-indicator::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: pulse-ring 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Loading shimmer block */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+.light .shimmer {
+  background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.03), transparent);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
